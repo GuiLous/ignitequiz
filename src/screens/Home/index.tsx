@@ -1,14 +1,14 @@
+import { useNavigation } from '@react-navigation/native';
+import { Trophy } from 'phosphor-react-native';
 import { useEffect, useState } from 'react';
 import { FlatList, View } from 'react-native';
-import { Trophy } from 'phosphor-react-native';
-import { useNavigation } from '@react-navigation/native';
 
-import { Level } from '../../components/Level';
 import { Header } from '../../components/Header';
+import { Level } from '../../components/Level';
 import { QuizCard } from '../../components/QuizCard';
 
-import { styles } from './styles';
 import { QUIZZES } from '../../data/quizzes';
+import { styles } from './styles';
 
 export function Home() {
   const [quizzes, setQuizzes] = useState(QUIZZES);
@@ -50,8 +50,9 @@ export function Home() {
       <FlatList
         data={quizzes}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => (
+        renderItem={({ item, index }) => (
           <QuizCard
+            index={index}
             data={item}
             onPress={() => navigate('quiz', { id: item.id })}
           />
