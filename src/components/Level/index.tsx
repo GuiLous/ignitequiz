@@ -1,7 +1,7 @@
+import { useEffect } from 'react';
 import { Pressable, PressableProps } from 'react-native';
 import Animated, { Easing, interpolateColor, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 
-import { useEffect } from 'react';
 import { THEME } from '../../styles/theme';
 import { styles } from './styles';
 
